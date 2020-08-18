@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KQ</key>
+	<dict>
+		<key>code</key>
+		<array>
+			<string>FFFFFFFF05000000051703</string>
+			<string>FFFFFFFF0500005F0521F3</string>
+			<string>FFFFFFFF050000000F9704</string>
+			<string>FFFFFFFF0500000008D6C6</string>
+			<string>FFFFFFFF0500000028D71E</string>
+			<string>FFFFFFFF050000002916DE</string>
+		</array>
+		<key>image</key>
+		<array>
+			<string>图层1</string>
+			<string>零压力</string>
+			<string>止鼾</string>
+			<string>复原</string>
+			<string>听音乐</string>
+			<string>向上倾斜</string>
+		</array>
+		<key>title</key>
+		<array>
+			<string>TV</string>
+			<string>ZG</string>
+			<string>LUMBER</string>
+			<string>FLAT</string>
+			<string>Music</string>
+			<string>Leg Relax</string>
+		</array>
+	</dict>
+	<key>noraml</key>
+	<dict>
+		<key>code</key>
+		<array>
+			<string>FFFFFFFF05000000051703</string>
+			<string>FFFFFFFF0500005F0521F3</string>
+			<string>FFFFFFFF050000000F9704</string>
+			<string>FFFFFFFF0500000008D6C6</string>
+			<string>FFFFFFFF0500000028D71E</string>
+			<string>FFFFFFFF050000002916DE</string>
+		</array>
+		<key>image</key>
+		<array>
+			<string>图层1</string>
+			<string>零压力</string>
+			<string>止鼾</string>
+			<string>复原</string>
+			<string>听音乐</string>
+			<string>向上倾斜</string>
+		</array>
+		<key>title</key>
+		<array>
+			<string>TV</string>
+			<string>ZG</string>
+			<string>ANTI SNORE</string>
+			<string>FLAT</string>
+			<string>Music</string>
+			<string>Leg Relax</string>
+		</array>
+	</dict>
+</dict>
+</plist>

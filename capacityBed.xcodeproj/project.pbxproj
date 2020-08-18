@@ -9,7 +9,17 @@
 /* Begin PBXBuildFile section */
 		07BDCEDA8F276CBDD338A655 /* libPods-capacityBed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBBE076A59F033F70EB6A59 /* libPods-capacityBed.a */; };
 		21BA5847A48EBE3EF3525BC6 /* libPods-capacityBedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B43384386515A0206CA51C69 /* libPods-capacityBedTests.a */; };
-		4B1E0D0124E7D4D60006A08B /* JDY_BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1E0D0024E7D4D60006A08B /* JDY_BLE.m */; };
+		2307B430247D418900BFBEBA /* FunctionMicroAdjDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2307B42F247D418800BFBEBA /* FunctionMicroAdjDataCenter.m */; };
+		2307B4322487514B00BFBEBA /* 蓝牙类型汇总.png in Resources */ = {isa = PBXBuildFile; fileRef = 2307B4312487514A00BFBEBA /* 蓝牙类型汇总.png */; };
+		23264C612466A1A3007454C9 /* FunctionShortCutDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 23264C602466A1A3007454C9 /* FunctionShortCutDataCenter.m */; };
+		23264C632466B137007454C9 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23264C622466B137007454C9 /* Property List.plist */; };
+		23264C662466B235007454C9 /* CodeNameImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23264C652466B235007454C9 /* CodeNameImageModel.m */; };
+		23264C702466B27C007454C9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 23264C682466B27C007454C9 /* LICENSE */; };
+		23264C712466B27C007454C9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 23264C692466B27C007454C9 /* README.md */; };
+		23264C722466B27C007454C9 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23264C6D2466B27C007454C9 /* NSObject+YYModel.m */; };
+		23264C732466B27C007454C9 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 23264C6E2466B27C007454C9 /* YYClassInfo.m */; };
+		23264C752466B608007454C9 /* KuaiJieData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23264C742466B608007454C9 /* KuaiJieData.plist */; };
+		4B76B88D2457C5020019A225 /* JDY_BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B76B88C2457C5020019A225 /* JDY_BLE.m */; };
 		4B885F0D21ABAC99002F6414 /* 腿部调整111.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B885EFE21ABAC99002F6414 /* 腿部调整111.gif */; };
 		4B885F0E21ABAC99002F6414 /* 背腿升起111.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B885EFF21ABAC99002F6414 /* 背腿升起111.gif */; };
 		4B885F0F21ABAC99002F6414 /* 头部调整111F.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4B885F0021ABAC99002F6414 /* 头部调整111F.gif */; };
@@ -84,9 +94,24 @@
 /* Begin PBXFileReference section */
 		0D68B497A60CBD6BCB86D277 /* Pods-capacityBed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capacityBed.release.xcconfig"; path = "Pods/Target Support Files/Pods-capacityBed/Pods-capacityBed.release.xcconfig"; sourceTree = "<group>"; };
 		1162CBF14E2C54B7178AF238 /* Pods-capacityBed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capacityBed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-capacityBed/Pods-capacityBed.debug.xcconfig"; sourceTree = "<group>"; };
+		2307B42E247D418800BFBEBA /* FunctionMicroAdjDataCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionMicroAdjDataCenter.h; sourceTree = "<group>"; };
+		2307B42F247D418800BFBEBA /* FunctionMicroAdjDataCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionMicroAdjDataCenter.m; sourceTree = "<group>"; };
+		2307B4312487514A00BFBEBA /* 蓝牙类型汇总.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "蓝牙类型汇总.png"; sourceTree = "<group>"; };
+		23264C5F2466A1A3007454C9 /* FunctionShortCutDataCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionShortCutDataCenter.h; sourceTree = "<group>"; };
+		23264C602466A1A3007454C9 /* FunctionShortCutDataCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionShortCutDataCenter.m; sourceTree = "<group>"; };
+		23264C622466B137007454C9 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		23264C642466B235007454C9 /* CodeNameImageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeNameImageModel.h; sourceTree = "<group>"; };
+		23264C652466B235007454C9 /* CodeNameImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeNameImageModel.m; sourceTree = "<group>"; };
+		23264C682466B27C007454C9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		23264C692466B27C007454C9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		23264C6B2466B27C007454C9 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		23264C6C2466B27C007454C9 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		23264C6D2466B27C007454C9 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		23264C6E2466B27C007454C9 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		23264C6F2466B27C007454C9 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		23264C742466B608007454C9 /* KuaiJieData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = KuaiJieData.plist; sourceTree = "<group>"; };
 		2BCB4FFA6E71F0A82437B8BB /* Pods-capacityBedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capacityBedUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-capacityBedUITests/Pods-capacityBedUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4B1E0CFF24E7D4D60006A08B /* JDY_BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDY_BLE.h; sourceTree = "<group>"; };
-		4B1E0D0024E7D4D60006A08B /* JDY_BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDY_BLE.m; sourceTree = "<group>"; };
+		4B76B88C2457C5020019A225 /* JDY_BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDY_BLE.m; sourceTree = "<group>"; };
 		4B885EFE21ABAC99002F6414 /* 腿部调整111.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "腿部调整111.gif"; sourceTree = "<group>"; };
 		4B885EFF21ABAC99002F6414 /* 背腿升起111.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "背腿升起111.gif"; sourceTree = "<group>"; };
 		4B885F0021ABAC99002F6414 /* 头部调整111F.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "头部调整111F.gif"; sourceTree = "<group>"; };
@@ -122,6 +147,7 @@
 		821D4C6C212D41DF009397C9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Language.strings"; sourceTree = "<group>"; };
 		821D4C70212D4B70009397C9 /* ChooseLanguagVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseLanguagVC.h; sourceTree = "<group>"; };
 		821D4C71212D4B70009397C9 /* ChooseLanguagVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseLanguagVC.m; sourceTree = "<group>"; };
+		823BB5192137800700AFCF40 /* JDY_BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDY_BLE.h; sourceTree = "<group>"; };
 		823BB51A21378A1700AFCF40 /* jdy_scan_ble_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jdy_scan_ble_ViewController.h; sourceTree = "<group>"; };
 		823BB51B21378A1800AFCF40 /* jdy_scan_ble_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jdy_scan_ble_ViewController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		823BB51D21378A6900AFCF40 /* TY_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TY_ViewController.h; sourceTree = "<group>"; };
@@ -210,6 +236,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23264C672466B27C007454C9 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				23264C682466B27C007454C9 /* LICENSE */,
+				23264C692466B27C007454C9 /* README.md */,
+				23264C6A2466B27C007454C9 /* YYModel */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
+		23264C6A2466B27C007454C9 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				23264C6B2466B27C007454C9 /* YYClassInfo.h */,
+				23264C6C2466B27C007454C9 /* YYModel.h */,
+				23264C6D2466B27C007454C9 /* NSObject+YYModel.m */,
+				23264C6E2466B27C007454C9 /* YYClassInfo.m */,
+				23264C6F2466B27C007454C9 /* NSObject+YYModel.h */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
 		4B885EFD21ABAC99002F6414 /* gif */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +286,15 @@
 			children = (
 				8216228A212E3874004E703F /* FunctionVC.h */,
 				8216228B212E3874004E703F /* FunctionVC.m */,
+				23264C5F2466A1A3007454C9 /* FunctionShortCutDataCenter.h */,
+				23264C602466A1A3007454C9 /* FunctionShortCutDataCenter.m */,
+				2307B42E247D418800BFBEBA /* FunctionMicroAdjDataCenter.h */,
+				2307B42F247D418800BFBEBA /* FunctionMicroAdjDataCenter.m */,
+				23264C622466B137007454C9 /* Property List.plist */,
+				2307B4312487514A00BFBEBA /* 蓝牙类型汇总.png */,
+				23264C742466B608007454C9 /* KuaiJieData.plist */,
+				23264C642466B235007454C9 /* CodeNameImageModel.h */,
+				23264C652466B235007454C9 /* CodeNameImageModel.m */,
 			);
 			name = Function;
 			sourceTree = "<group>";
@@ -315,8 +372,8 @@
 		823FA2FC212B96CF00CE8855 /* capacityBed */ = {
 			isa = PBXGroup;
 			children = (
-				4B1E0CFF24E7D4D60006A08B /* JDY_BLE.h */,
-				4B1E0D0024E7D4D60006A08B /* JDY_BLE.m */,
+				4B76B88C2457C5020019A225 /* JDY_BLE.m */,
+				823BB5192137800700AFCF40 /* JDY_BLE.h */,
 				823FA352212C052F00CE8855 /* Category */,
 				823FA34C212BFE4700CE8855 /* Tool */,
 				8216228D212E3AF9004E703F /* Classes */,
@@ -395,6 +452,7 @@
 		823FA34C212BFE4700CE8855 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				23264C672466B27C007454C9 /* YYModel */,
 				823FA342212BF97F00CE8855 /* SVProgressHUD */,
 			);
 			path = Tool;
@@ -571,14 +629,19 @@
 				4BE9EF5721ABE41100911A13 /* 头部调整1112.gif in Resources */,
 				4B885F0E21ABAC99002F6414 /* 背腿升起111.gif in Resources */,
 				823FA305212B96CF00CE8855 /* Main.storyboard in Resources */,
+				23264C752466B608007454C9 /* KuaiJieData.plist in Resources */,
 				4B885F1221ABAC99002F6414 /* 静止111.png in Resources */,
+				2307B4322487514B00BFBEBA /* 蓝牙类型汇总.png in Resources */,
 				4B885F1821ABAC99002F6414 /* 向上倾斜111.png in Resources */,
 				823FA349212BF97F00CE8855 /* SVProgressHUD.bundle in Resources */,
+				23264C712466B27C007454C9 /* README.md in Resources */,
 				823BB52121378A6900AFCF40 /* TY_ViewController.xib in Resources */,
+				23264C632466B137007454C9 /* Property List.plist in Resources */,
 				4B885F2521ABCBC6002F6414 /* 背部调整111.gif in Resources */,
 				4B885F1521ABAC99002F6414 /* 头部调整111.gif in Resources */,
 				4B885F1121ABAC99002F6414 /* 臀部上升111.gif in Resources */,
 				4B885F1621ABAC99002F6414 /* 向下倾斜灰色111.png in Resources */,
+				23264C702466B27C007454C9 /* LICENSE in Resources */,
 				4B885F1421ABAC99002F6414 /* 背部调整111f.gif in Resources */,
 				4B885F1B21ABAC99002F6414 /* 背腿下降111.gif in Resources */,
 				4B885F1321ABAC99002F6414 /* 臀部下降111.gif in Resources */,
@@ -666,6 +729,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				823FA338212B9E4400CE8855 /* ConnectDeviceVC.m in Sources */,
+				2307B430247D418900BFBEBA /* FunctionMicroAdjDataCenter.m in Sources */,
+				23264C662466B235007454C9 /* CodeNameImageModel.m in Sources */,
 				823FA366212C076600CE8855 /* UIImage+LT_git.m in Sources */,
 				823FA359212C068F00CE8855 /* BaseViewController.m in Sources */,
 				823FA302212B96CF00CE8855 /* ViewController.m in Sources */,
@@ -679,13 +744,16 @@
 				82162291212E3B4C004E703F /* FunctionHeaderView.m in Sources */,
 				823FA34F212BFF8E00CE8855 /* HelloViewController.m in Sources */,
 				823BB52021378A6900AFCF40 /* TY_ViewController.m in Sources */,
+				23264C732466B27C007454C9 /* YYClassInfo.m in Sources */,
 				8251E2CF2134D45F0097BC9D /* KneadView.m in Sources */,
 				823FA34A212BF97F00CE8855 /* SVProgressHUD.m in Sources */,
 				823FA355212C053D00CE8855 /* UINavigationBar+KXNavigationBar.m in Sources */,
 				82162297212E52A4004E703F /* FunctionView.m in Sources */,
 				823FA36A212C076600CE8855 /* UIButton+ImageTitleSpacing.m in Sources */,
 				821D4C72212D4B70009397C9 /* ChooseLanguagVC.m in Sources */,
-				4B1E0D0124E7D4D60006A08B /* JDY_BLE.m in Sources */,
+				23264C722466B27C007454C9 /* NSObject+YYModel.m in Sources */,
+				23264C612466A1A3007454C9 /* FunctionShortCutDataCenter.m in Sources */,
+				4B76B88D2457C5020019A225 /* JDY_BLE.m in Sources */,
 				823FA2FF212B96CF00CE8855 /* AppDelegate.m in Sources */,
 				823FA370212C0FF800CE8855 /* SettingVC.m in Sources */,
 				823FA367212C076600CE8855 /* UIImageView+LT_loding.m in Sources */,
@@ -875,7 +943,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 2020050901;
 				DEVELOPMENT_TEAM = 35UMWK76S2;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -904,7 +972,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 2020050901;
 				DEVELOPMENT_TEAM = 35UMWK76S2;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

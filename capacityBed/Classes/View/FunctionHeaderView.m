@@ -48,8 +48,6 @@
     self.bgImageView.userInteractionEnabled =1;
     [self addSubview:self.bgImageView];
     
-    
-    
     UILongPressGestureRecognizer * longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(clickViewWithLongPress:)];
     longPress.minimumPressDuration = 3.0;
     [self.bgImageView addGestureRecognizer:longPress];
@@ -60,10 +58,6 @@
    
     [self.bgImageView addSubview:self.functionImageView];
     
-    
-    
-    
-    
     self.functionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, GMAXY(self.functionImageView)+19, GVW(self.bgImageView), 16)];
     self.functionLabel.text=@"看电视";
     self.functionLabel.textColor=[UIColor whiteColor];
@@ -71,6 +65,7 @@
     self.functionLabel.font=[UIFont systemFontOfSize:16];
     [self.functionLabel adjustsFontSizeToFitWidth];
     [self.bgImageView addSubview:self.functionLabel];
+
 }
 
 -(void)setupSubViewsWithFunctionImageName:(NSString *)functionImageName andFunctionName:(NSString *)functionName{
@@ -82,7 +77,7 @@
 
 -(void)setupSubViewsWithGIFImageName:(NSString *)functionImageName andFunctionName:(NSString *)functionName
 {
-    NSString*filePath = [[NSBundle bundleWithPath:[[NSBundle mainBundle] bundlePath]] pathForResource:[NSString stringWithFormat:@"%@.gif",functionImageName] ofType:nil];
+    NSString*filePath = [[NSBundle bundleWithPath:[[NSBundle mainBundle] bundlePath]] pathForResource:[NSString stringWithFormat:@"%@",functionImageName] ofType:nil];
     NSData*imageData = [NSData dataWithContentsOfFile:filePath];
     self.functionImageView.image = [UIImage sd_animatedGIFWithData:imageData];
     self.functionImageView.contentMode=UIViewContentModeScaleAspectFill;

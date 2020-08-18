@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FunctionVC.h"
 
 @interface FunctionView : UIImageView
 
 @property (nonatomic, strong)UIImageView * imgV;
 
 
--(void)setupSubViewsWithFunctionImageName:(NSString *)functionImageName andFunctionName:(NSString *)functionName;
+-(void)setupSubViewsWithFunctionImageName:(NSString *)functionImageName andFunctionName:(NSString *)functionName withFuncType:(FunctionType)funcType index:(NSInteger)index;
 
+-(void)setupSubViewsWithFunctionName:(NSString *)functionName;
 
 -(void)setBackImageWithName:(NSString*)name;
 @end

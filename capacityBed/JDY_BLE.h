@@ -76,6 +76,13 @@ typedef enum//iBeacon模式设备类型  === 0xe0
     
 } jdy_dev_bj_type ;
 
+
+
+
+
+
+
+
 @protocol JDY_BLE_Delegate
 @optional
 -(void) JDY_BLE_Ready;//模块连接后会调用此函数
@@ -168,6 +175,7 @@ typedef enum//iBeacon模式设备类型  === 0xe0
 
 -(void) set_VID:(Byte)ID;//设置厂家VID 默认为JDY厂家VID为0X88
 
-+ (instancetype)shared;
+
+
 
 @end

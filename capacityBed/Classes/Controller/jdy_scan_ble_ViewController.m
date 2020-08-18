@@ -8,14 +8,11 @@
 
 #import "jdy_scan_ble_ViewController.h"
 #import "FunctionVC.h"
+#import "FunctionShortCutDataCenter.h"
 
 @interface jdy_scan_ble_ViewController ()<JDY_BLE_Delegate>
 {
-    //YGHTabBarController *tabBarViewController_;
-    
     FunctionVC *touchuang_view;
-  
-    
     Byte selected_type;
     
     int select_index ;
@@ -29,8 +26,6 @@
 @end
 
 @implementation jdy_scan_ble_ViewController
-//@synthesize refreshControl;
-
 
 #define PASS_ENABLE   1   //true时表示采用加密  false表示不采用加密
 - (void)didReceiveMemoryWarning
@@ -45,7 +40,6 @@
         
         NSLog(@"Creating Variable in Memory");
         
-        
         UITabBarItem *tbi2 = [[UITabBarItem alloc]
                               initWithTabBarSystemItem:UITabBarSystemItemFavorites
                               tag:0];
@@ -57,8 +51,6 @@
 {
     return UIStatusBarStyleLightContent;
 }
-
-
 
 - (void)viewDidLoad
 {
@@ -74,9 +66,7 @@
                       action:@selector(toggleEdit:)];
     editButton.tag=1;
     
- 
     int t55=0;
-    
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         NSLog(@"这个设备是iphone");
@@ -101,9 +91,6 @@
     
     [UIApplication sharedApplication].idleTimerDisabled = YES;
     
-    
-    selected_type = touchuang;
-    
     t = [[JDY_BLE alloc] init];
     t.delegate = self;
     
@@ -114,48 +101,32 @@
     [tab setDelegate:self];
     tab.separatorColor=[UIColor blackColor];
     tab.backgroundColor=[UIColor colorWithWhite:0.07 alpha:1];
-    
-    
-    
+
     UIButton * btn =  [[UIButton alloc]initWithFrame:CGRectMake(0, kScreenheight-KPHONEXHeight-50, kScreenwidth, 50)];
     btn.backgroundColor = [UIColor blackColor];
     [btn setTitle:Localized(@"Scanning Nearby Equipment") forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(toggleEdit:) forControlEvents:UIControlEventTouchUpInside];
     btn.tag =1;
     [self.view addSubview:btn];
-    
-    
-    
+
     dfg=0;
 
-    
-    
-   
-    
-    
-    
     [self setConect_status:0];
     [self setSelect_st:0];
-    
-    
-  
+
     select_index = 0;
     
     aPeripheral8=nil;
     cont_status=0;
-    
     
     ivt=0;
     dly=0;
     hbn=0;
 
     select_index = 0;
-    
 
      [NSTimer scheduledTimerWithTimeInterval:(float)1.0 target:self selector:@selector(scanTimer:) userInfo:nil repeats:NO];
 }
-
-
 
 - (void)scanTimer:(NSTimer *)timer
 {
@@ -166,8 +137,6 @@
     NSLog(@"Scan_Dev");
     [tab reloadData];
 }
-
-
 
 //uart_function_select=true表示透传
 //uart_function_select=false表示功能
@@ -214,7 +183,6 @@
     }
 }
 
-
 -(void) tabBar_Delegate_send_data_hex:(NSString*)data
 {
     NSLog( @"send_data: %@",data );
@@ -226,15 +194,9 @@
     Byte *testbyte=(Byte*)[da2 bytes];
     NSLog(@"hh=%@",data);
     int len=(int)[da2 length];
-    
-    
 
     [ t send_function_data:testbyte pp:len ];
-
-    
 }
-
-
 
 -(void)toggleEdit:(UIBarButtonItem*)tag
 {
@@ -280,14 +242,7 @@
     NSInteger        row    = [indexPath row];
     aPeripheral = (CBPeripheral*)[t.foundPeripherals objectAtIndex:row];
 
-    cell.textLabel.font = [UIFont systemFontOfSize:17];
-    NSString * title = [aPeripheral.name stringByReplacingOccurrencesOfString:@";" withString:@""];
-    NSString * aftersStr1 =  [title stringByReplacingOccurrencesOfString:@":" withString:@"A"];
-    NSString * aftersStr2 =  [aftersStr1 stringByReplacingOccurrencesOfString:@";" withString:@"B"];
-    NSString * aftersStr3 =  [aftersStr2 stringByReplacingOccurrencesOfString:@"<" withString:@"C"]; NSString * aftersStr4 =  [aftersStr3 stringByReplacingOccurrencesOfString:@"=" withString:@"D"];
-    NSString * aftersStr5 =  [aftersStr4 stringByReplacingOccurrencesOfString:@">" withString:@"E"];
-    NSString * aftersStr6 =  [aftersStr5 stringByReplacingOccurrencesOfString:@"?" withString:@"F"];
-    cell.textLabel.text = aftersStr6;
+    cell.textLabel.text = [aPeripheral.name stringByReplacingOccurrencesOfString:@";" withString:@""];
     cell.textLabel.textColor=[UIColor whiteColor];
     return cell;
 }
@@ -316,63 +271,46 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    CBPeripheral    *aPeripheral;
-    NSInteger        row    = [indexPath row];
+   CBPeripheral    *aPeripheral;
+   NSInteger        row    = [indexPath row];
     if (t.foundPeripherals.count ==0) {
-          return;
+        return;
     }
-    aPeripheral = (CBPeripheral*)[t.foundPeripherals objectAtIndex:row];
-    self.titleStr = [aPeripheral.name  stringByReplacingOccurrencesOfString:@";" withString:@""];
+   aPeripheral = (CBPeripheral*)[t.foundPeripherals objectAtIndex:row];
+   self.titleStr = [aPeripheral.name  stringByReplacingOccurrencesOfString:@";" withString:@""];
 
-    UITableViewCell * cell = [tab cellForRowAtIndexPath:indexPath];
-    [[NSUserDefaults standardUserDefaults] setObject:cell.textLabel.text forKey:@"connect"];
 
-    select_row=(int)(row);
-//    [[NSUserDefaults standardUserDefaults] setObject:t.MAC_ADDRESS[indexPath.row] forKey:@"UDID"];
-    [t stop_scan_ble];
+   UITableViewCell * cell = [tab cellForRowAtIndexPath:indexPath];
+   [[NSUserDefaults standardUserDefaults] setObject:cell.textLabel.text forKey:@"connect"];
+   
+   select_row=(int)(row);
 
-    if([t get_connected_status])
-    {
-        [t disconnected_JDY_BLE:row ];
-    }
-    
-    if (![t get_connected_status])//[[t activePeripheral] isConnected])
-    {
-        if( selected_type==touchuang||selected_type==pwm_dentiao )
-        {
-            [t connect_JDY_BLE:row];
-        }
-        else
-        {
-            //初始化提示框；
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"目前暂不支持此功能！" preferredStyle:  UIAlertControllerStyleAlert];
+   [t stop_scan_ble];
+   
+   selected_type = touchuang;
 
-            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                //点击按钮的响应事件；
-            }]];
-
-            //弹出提示框；
-            [self presentViewController:alert animated:true completion:nil];
-        }
-    }
-    else
-    {
-
-    }
-    
+   if([t get_connected_status])
+   {
+       
+       [t disconnected_JDY_BLE:row ];
+   }
+   
+   if (![t get_connected_status])//[[t activePeripheral] isConnected])
+   {
+       [t connect_JDY_BLE:row];
+   }
+   else
+   {
+       
+   }
     [self setConect_status:(int)(row+1)];
 }
-
-
-
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     return TRUE;
 }
-
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -384,7 +322,6 @@
         [self addtTimer];
     }];
     [self.rigltbutton setTitle:[NSString stringWithFormat:@"%lds",index] forState:UIControlStateNormal];
-    
 
     ivt=0;
 
@@ -394,7 +331,6 @@
         [t disconnectPeripheral ];
 
     }
-    
 }
 
 -(void)addtTimer
@@ -406,9 +342,9 @@
         [timer invalidate];
         touchuang_view = [[FunctionVC alloc] init];
         touchuang_view.titleStr = self.titleStr;
-        
+        touchuang_view.functionType = FunctionType430And730;
         touchuang_view.delegate = (id)self;
-        //[self.navigationController pushViewController:touchuang_view animated:YES];
+        [self.navigationController pushViewController:touchuang_view animated:YES];
         index = 0;
     }
     
@@ -426,9 +362,7 @@
     [super viewDidAppear:animated];
     
     touchuang_view = nil;
-    
     [t start_scan_ble];
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -440,8 +374,6 @@
 {
     [super viewDidDisappear:animated];
 }
-
-
 
 - (void)myTask {
     sleep(10);
@@ -456,13 +388,10 @@
 
 }
 
-
 -(void)handleTimer99
 {
  
 }
-
-
 
 - (void)Scan {
     ivt = 0;
@@ -491,9 +420,7 @@
     {
         [ touchuang_view rx_ble_function_event:bytes :len ];
     }
-    
 }
-
 
 -(void) keyValuesUpdated:(char)sw {
     
@@ -502,7 +429,6 @@
 //模块连接后会调用此函数
 -(void) JDY_BLE_Ready {
 
-    
     [t enable_JDY_BLE_uart];
     [t enable_JDY_BLE_function];
     
@@ -526,9 +452,12 @@
         
         else if( selected_type==touchuang )// 透传
         {
+            [timer invalidate];
             touchuang_view = [[FunctionVC alloc] init];
             touchuang_view.titleStr = self.titleStr;
-            //touchuang_view.titleStr = @"KQ-H";
+            FunctionShortCutDataCenter * dataCenter = [[FunctionShortCutDataCenter alloc]init];
+            //[dataCenter getFunctionTypeWithTitle:self.titleStr]
+            touchuang_view.functionType = FunctionType430And730;
             touchuang_view.delegate = (id)self;
             [self.navigationController pushViewController:touchuang_view animated:YES];
         }

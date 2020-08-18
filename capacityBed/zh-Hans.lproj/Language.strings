@@ -47,3 +47,18 @@
 "Back Leg Circulation" = "背腿循环";
 "LUMBER" = "顶腰";
 "Overall Lifting" = "整体升降";
+
+"ZG-L"="零压力-L";
+"ZG-R"="零压力-R";
+"FLAT-L"="复原-L";
+"FLAT-R"="复原-R";
+"TV-L"="看电视-L";
+"TV-R"="看电视-R";
+
+"M-L"="记忆-L";
+"M-R"="记忆-R";
+
+"Lean"="倾斜";
+
+"Left"="左";
+"Right"="右";

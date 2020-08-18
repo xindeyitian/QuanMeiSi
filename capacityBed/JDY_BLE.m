@@ -43,8 +43,6 @@
 #define uart_data_uuid 0xffe1
 #define uart_tx_uuid 0xffe2
 
-static JDY_BLE * _instance;
-
 @interface JDY_BLE ()
 {
     
@@ -105,6 +103,10 @@ static JDY_BLE * _instance;
 
 @synthesize centralManager;
 @synthesize connectedPeripheral;
+
+
+
+
 
 -(NSString*)Byte_to_hexString:(Byte *)bytes :(int)len
 {
@@ -336,6 +338,9 @@ static JDY_BLE * _instance;
         NSData *d = [[NSData alloc] initWithBytes:by+20*ys length:mi];
         [self writeValue:uart_server_uuid characteristicUUID:uart_tx_uuid p:p data:d];
     }
+    
+    
+    
 }
 
 -(void) send_function_data:(Byte*)data p:(CBPeripheral *)p pp:(int)len
@@ -384,6 +389,9 @@ static JDY_BLE * _instance;
 -(void) readBattery:(CBPeripheral *)p {
     [self readValue:TI_KEYFOB_BATT_SERVICE_UUID characteristicUUID:TI_KEYFOB_LEVEL_SERVICE_UUID p:p];
 }
+
+
+//
 
 -(void) enableAccelerometer:(CBPeripheral *)p {
     char data = 0x01;
@@ -571,6 +579,7 @@ static JDY_BLE * _instance;
     activePeripheral = (CBPeripheral *)[self.foundPeripherals objectAtIndex:(int)index];;
     activePeripheral.delegate = self;
     [CM connectPeripheral:activePeripheral options:nil];
+    
     
     //NSString*strNSString = [[NSString alloc] initWithUTF8String:[self UUIDToString:[[self activePeripheral] UUID]]];
     
@@ -1111,7 +1120,6 @@ static JDY_BLE * _instance;
 //        [self->foundPeripherals addObject:peripheral];
 //        [self.delegate discoveryDidRefresh];
 //    }
-//    return;
     
     NSString *tsss=@"";
     NSLog(@"advertisementData=====%@",advertisementData);
@@ -1125,10 +1133,13 @@ static JDY_BLE * _instance;
     if( value3==NULL&&value100==NULL )return;
     if( value3==NULL&&value100!=NULL )is_iBeacon=false;//IBEACON  直接全部默认false
     else if( value3!=NULL&&value100==NULL )is_iBeacon=false;//透传
-
+    
+    
+    
     const char *p3=[[value3 description]cStringUsingEncoding:NSUTF8StringEncoding];
     const char *p6=[[value6 description]cStringUsingEncoding:NSUTF8StringEncoding];
     const char *p100=[[value100 description]cStringUsingEncoding:NSUTF8StringEncoding];
+    
     
     NSString *name_jdy = [[NSString alloc] initWithUTF8String:p6];
     
@@ -1137,18 +1148,13 @@ static JDY_BLE * _instance;
     NSString *str_type = @"";
     if( is_iBeacon==false )//透传
     {
-        if (p3) {
-           all_data = [[NSString alloc] initWithUTF8String:p3];
-        }
+        all_data = [[NSString alloc] initWithUTF8String:p3];
         
         if (@available(iOS 13.0, *)) {
             
             NSString * data = [all_data stringByReplacingOccurrencesOfString:@" " withString:@""];
             NSArray * array = [data componentsSeparatedByString:@"bytes="];
             NSString * lastString = [[array lastObject] uppercaseString];
-            if (lastString.length < 10) {
-                return;
-            }
             NSString * rangString = [lastString substringWithRange:NSMakeRange(6, 4)];
             if (![rangString isEqualToString:@"88A0"]) {
                 return;
@@ -1223,7 +1229,6 @@ static JDY_BLE * _instance;
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error {
-    
     if (!error)
     {
         //NSLog(@"Characteristics of service with UUID : %s found\r\n",[self CBUUIDToString:service.UUID]);
@@ -1432,24 +1437,6 @@ static JDY_BLE * _instance;
     
 }
 
-+ (instancetype)shared{
-    if (!_instance) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            _instance = [[super allocWithZone:nil] init];
-        });
-    }
-    return _instance;
-}
-
-+ (instancetype)allocWithZone:(struct _NSZone *)zone {
-    return [JDY_BLE shared];
-}
-
--(id) copyWithZone:(struct _NSZone *)zone
-{
-    return [JDY_BLE shared];
-}
 
 
 @end

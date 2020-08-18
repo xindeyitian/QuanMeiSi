@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name1</key>
+	<dict>
+		<key>remark</key>
+		<string>这是干嘛的</string>
+		<key>name</key>
+		<string>2346</string>
+		<key>logo</key>
+		<string>3456</string>
+		<key>code</key>
+		<string>2345</string>
+	</dict>
+	<key>name2</key>
+	<dict>
+		<key>remark</key>
+		<string>这是最基本的</string>
+		<key>name</key>
+		<string>23</string>
+		<key>logo</key>
+		<string>35</string>
+		<key>code</key>
+		<string>235</string>
+	</dict>
+	<key>name3</key>
+	<dict>
+		<key>remark</key>
+		<string>这是快捷的</string>
+		<key>name</key>
+		<string>1</string>
+		<key>logo</key>
+		<string>46</string>
+		<key>code</key>
+		<string>456</string>
+	</dict>
+</dict>
+</plist>

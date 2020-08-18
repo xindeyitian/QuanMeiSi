@@ -49,6 +49,10 @@
 
     [t start_scan_ble];
     
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *path = [bundle pathForResource:@"KuaiJieData" ofType:@"plist"];
+    NSDictionary * dict =[NSDictionary dictionaryWithContentsOfFile:path];
+    NSLog(@"-----%@",dict);
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -81,15 +85,6 @@
     [SVProgressHUD  setOffsetFromCenter:UIOffsetMake(0, 130)];
     
      [SVProgressHUD show];
-    
-    
-    
-    
-    
-  
-    
-
-    
     
     t = [[JDY_BLE alloc] init];
     t.delegate = self;
