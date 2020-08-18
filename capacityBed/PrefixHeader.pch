@@ -1,0 +1,49 @@
+//
+//  PrefixHeader.pch
+//  capacityBed
+//
+//  Created by 吾诺翰卓 on 2018/8/21.
+//  Copyright © 2018年 吾诺翰卓. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import "UINavigationBar+KXNavigationBar.h"
+#import "UIButton+ImageTitleSpacing.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
+//常用方法
+#define kxImageNameWith(imageName) [UIImage imageNamed:imageName]
+#define FONT(font) [UIFont systemFontOfSize:font]
+#define kxColor(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+//尺寸
+#define kScreenscale [UIScreen mainScreen].bounds.size.width/375.0
+#define kScreenwidth  [UIScreen mainScreen].bounds.size.width
+#define kScreenheight  [UIScreen mainScreen].bounds.size.height
+
+
+//self弱引用
+#define WeakObj(o) autoreleasepool{} __weak typeof(o) o##Weak = o;
+
+#define SanMU(value0,value1)     value0 != nil?value0:value1
+#define KTabBarHeight   (kScreenheight > 811.0 ? 49+34 : 49)
+#define KNavigationHeight   (kScreenheight > 811.0 ? 44+24 : 44)
+#define KStatusBar    (kScreenheight > 811.0 ? 44 : 20)
+#define KNavHeight   (kScreenheight > 811.0 ? 64+24 : 64)
+#define KPHONEXHeight    (kScreenheight > 811.0 ? 34 : 0)
+#define KPHONEXStatusHeight    (kScreenheight > 811.0 ? 24 : 0)
+
+#define WINDOW                     [[UIApplication sharedApplication].delegate window]
+
+#define GMAXX(view) CGRectGetMaxX((view).frame)
+#define GMAXY(view) CGRectGetMaxY((view).frame)
+#define GMINX(view) CGRectGetMinX((view).frame)
+#define GMINY(view) CGRectGetMinY((view).frame)
+#define GVH(view)  CGRectGetHeight((view).frame)
+#define GVW(view)  CGRectGetWidth((view).frame)
+
+// NSLocalizedString(key, comment) 本质
+// NSlocalizeString 第一个参数是内容,根据第一个参数去对应语言的文件中取对应的字符串，第二个参数将会转化为字符串文件里的注释，可以传nil，也可以传空字符串@""。
+#define Localized(key)  [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"appLanguage"]] ofType:@"lproj"]] localizedStringForKey:(key) value:nil table:@"Language"]
+
+#endif /* PrefixHeader_pch */

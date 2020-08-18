@@ -1,0 +1,49 @@
+/* 
+  Language.strings
+  capacityBed
+
+  Created by 吾诺翰卓 on 2018/8/22.
+  Copyright © 2018年 吾诺翰卓. All rights reserved.
+*/
+"SHORTCUT"="快捷";
+"ZG"="零压力";
+"ANTI SNORE"="止鼾";
+"FLAT"="复原";
+"Music"="听音乐";
+"Leg Relax"="腿部放松";
+"M1"="记忆1";
+"M2"="记忆2";
+"MICRO ADJ"="微调";
+"BACK"="背部调整";
+"HIP"="臀部调整";
+"BACK AND LEG"="背腿调整";
+"WAIST"="腰部调整";
+"HEAD"="头部调整";
+"LEG"="腿部调整";
+"MASS"="按摩";
+"WAVE"="按摩频率";
+"HEAD "="头部按摩";
+"FOOT"="足部按摩";
+"LIGHT"="灯光";
+"Setting"="设置";
+"Switch Language"="切换语言";
+"Privacy Policy" = "隐私协议";
+"Version"="版本号";
+"My QRCode"="我的二维码";
+"Connecting Device"="连接设备";
+"Not Connected"="未连接";
+"Connected"="已连接";
+"Choose Language"="选择语言";
+"Done"="完成";
+"Enter"="进入";
+"TV"="看电视";
+"Equipment"="设备";
+"Scanning Nearby Equipment" = "扫描附近设备";
+"Whole Body Circulation" = "全身循环";
+"Hip Circulation" = "臀部循环";
+"Head Circulation" = "头部循环";
+"Leg Circulation" = "腿部循环";
+"Waist Circulation" = "腰部循环";
+"Back Leg Circulation" = "背腿循环";
+"LUMBER" = "顶腰";
+"Overall Lifting" = "整体升降";
